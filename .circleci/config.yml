@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   hello:
     machine: true
-    resource_class: <NAMESPACE>/<RESOURCE_CLASS>   # TODO: e.g. phantom-ai/build02-release
+    resource_class: phantomai-ilao/ilao-runner
     steps:
       - run:
           name: Hello World

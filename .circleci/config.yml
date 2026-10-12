@@ -27,6 +27,14 @@ jobs:
           command: |
             echo "AWS private IP: $(hostname -i)"
             echo "AWS public IP: $(curl -s https://checkip.amazonaws.com)"
+      - run:
+          name: Remote repo
+          command: |
+            echo "Repo name:  $CIRCLE_PROJECT_REPONAME"
+            echo "Workspace:  $CIRCLE_PROJECT_USERNAME"
+            echo "Remote URL: $CIRCLE_REPOSITORY_URL"
+            echo "Branch:     $CIRCLE_BRANCH"
+            echo "Commit:     $CIRCLE_SHA1"              
 
 workflows:
   hello:

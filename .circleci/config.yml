@@ -22,6 +22,11 @@ jobs:
       - run:
           name: OS (/etc/os-release)
           command: cat /etc/os-release
+      - run:
+          name: AWS IP Addresses
+          command: |
+            echo "AWS private IP: $(hostname -i)"
+            echo "AWS public IP: $(curl -s https://checkip.amazonaws.com)"
 
 workflows:
   hello:

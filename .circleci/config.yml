@@ -30,11 +30,11 @@ jobs:
       - run:
           name: Remote repo
           command: |
-            echo "Repo name:  $CIRCLE_PROJECT_REPONAME"
-            echo "Workspace:  $CIRCLE_PROJECT_USERNAME"
-            echo "Remote URL: $CIRCLE_REPOSITORY_URL"
-            echo "Branch:     $CIRCLE_BRANCH"
-            echo "Commit:     $CIRCLE_SHA1"              
+            echo "Repo name:   << pipeline.git.repo_name >>"
+            echo "Repo URL:    << pipeline.git.repo_url >>"
+            echo "Project URL: << pipeline.project.git_url >>"
+            echo "Branch:      << pipeline.git.branch >>"
+            echo "Commit:      << pipeline.git.revision >>"              
 
 workflows:
   hello:

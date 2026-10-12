@@ -3,35 +3,7 @@ version: 2.1
 jobs:
   hello:
     machine: true
-    resource_class: phantomai-ilao/ilao-runner
-    steps:
-      - run:
-          name: Hello World
-          command: echo "Hello World!"
-      - run:
-          name: Hostname
-          command: hostname
-      - run:
-          name: Current user
-          command: |
-            whoami
-            id
-      - run:
-          name: Kernel (uname -a)
-          command: uname -a
-      - run:
-          name: OS (/etc/os-release)
-          command: cat /etc/os-release
-
-workflows:
-  hello:
-    jobs:
-      - helloversion: 2.1
-
-jobs:
-  hello:
-    machine: true
-    resource_class: phantomai-ilao/ilao-runner 
+    resource_class: <NAMESPACE>/<RESOURCE_CLASS>   # your runner pool, e.g. phantom-ai/build02-release
     steps:
       - run:
           name: Hello World
